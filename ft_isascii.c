@@ -6,17 +6,18 @@
 /*   By: tmansing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 16:05:49 by tmansing          #+#    #+#             */
-/*   Updated: 2019/05/20 16:16:49 by tmansing         ###   ########.fr       */
+/*   Updated: 2019/05/22 11:45:46 by tmansing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+int		ft_isascii(int c)
 {
 	int i;
 
 	i = 0;
 	if (c >= 0 && c <= 127)
-		return (true);
-	else
-		return (false);
+	{
+		return (1);
+	}
+	return (0);
 }

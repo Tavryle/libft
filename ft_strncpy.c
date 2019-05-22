@@ -5,25 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmansing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 15:42:27 by tmansing          #+#    #+#             */
-/*   Updated: 2019/05/21 16:12:35 by tmansing         ###   ########.fr       */
+/*   Created: 2019/05/22 15:18:46 by tmansing          #+#    #+#             */
+/*   Updated: 2019/05/22 16:26:39 by tmansing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, const char *src, size_t len)
+#include "libft.h"
+
+char	*ft_strncpy(char *dest, const char *src, unsigned int len)
 {
-	int i;
+	unsigned int i;
 
 	i = 0;
-	while (src[i] != '\0' && i < len)
+	while (i < len)
 	{
 		dest[i] = src[i];
 		i++;
+		if (src[i] == '\0')
+		{
+			break ;
+		}
 	}
-	while (i < len)
-	{
-		dest[i] = '\0';
-		i++;
-	}
+	dest[i] = '\0';
 	return (dest);
 }
