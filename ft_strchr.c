@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmansing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 12:28:30 by tmansing          #+#    #+#             */
-/*   Updated: 2019/05/23 12:50:35 by tmansing         ###   ########.fr       */
+/*   Created: 2019/05/23 10:57:16 by tmansing          #+#    #+#             */
+/*   Updated: 2019/05/23 16:05:52 by tmansing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+#include "libft.h"
+#include <stdio.h>
+
+char		*ft_strchr(const char *s, int c)
 {
-	while (*s1 && (*s1 == *s2))
+	int i;
+
+	i = 0;
+	while (s[i] != '\0')
 	{
-		s2 += 2;
-		s1 += 1;
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
+		i++;
 	}
-	return (*s1 - *s2);
+	return (NULL);
+}
+
+int		main()
+{
+	char s[] = "hello the is me";
+	int c = 't';
+	printf("%s", ft_strchr(s, c));
+	return (0);
 }

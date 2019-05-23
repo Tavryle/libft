@@ -6,28 +6,29 @@
 /*   By: tmansing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 08:14:47 by tmansing          #+#    #+#             */
-/*   Updated: 2019/05/22 12:06:35 by tmansing         ###   ########.fr       */
+/*   Updated: 2019/05/23 15:56:19 by tmansing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft"
 
-char	*ft_strcat(char *dest, const char *src)
+char	*ft_strcat(char *s1, const char *s2)
 {
 	int i;
 	int k;
 
 	i = 0;
-	while (dest[i] != '\0')
+	while (s1[i] != '\0')
 	{
 		i++;
 	}
 	k = 0;
-	while (src[k] != '\0')
+	while (s2[k] != '\0')
 	{
-		dest[i + k] = src[k];
+		s1[i] = s2[k];
 		k++;
+		i++;
 	}
-	dest[i + k] = '\0';
-	return (dest);
+	s1[i] = '\0';
+	return (s1);
 }

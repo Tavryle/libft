@@ -6,15 +6,15 @@
 /*   By: tmansing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 15:18:46 by tmansing          #+#    #+#             */
-/*   Updated: 2019/05/22 16:26:39 by tmansing         ###   ########.fr       */
+/*   Updated: 2019/05/23 12:48:13 by tmansing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, const char *src, unsigned int len)
+char	*ft_strncpy(char *dest, const char *src, size_t len)
 {
-	unsigned int i;
+	int i;
 
 	i = 0;
 	while (i < len)
