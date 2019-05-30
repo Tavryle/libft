@@ -6,16 +6,19 @@
 /*   By: tmansing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 12:28:30 by tmansing          #+#    #+#             */
-/*   Updated: 2019/05/23 12:50:35 by tmansing         ###   ########.fr       */
+/*   Updated: 2019/05/30 15:36:02 by tmansing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_strcmp(char *s1, char *s2)
 {
-	while (*s1 && (*s1 == *s2))
+	int i;
+
+	i = 0;
+	while ((unsigned char)s1[i] 
+			&& ((unsigned char)s1[i] == (unsigned char)s2[i]))
 	{
-		s2 += 2;
-		s1 += 1;
+		i++;
 	}
-	return (*s1 - *s2);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

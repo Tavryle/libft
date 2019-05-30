@@ -6,11 +6,13 @@
 /*   By: tmansing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 13:04:38 by tmansing          #+#    #+#             */
-/*   Updated: 2019/05/20 13:09:14 by tmansing         ###   ########.fr       */
+/*   Updated: 2019/05/30 11:16:47 by tmansing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
 	int len;
 
@@ -19,5 +21,5 @@ int		ft_strlen(char *str)
 	{
 		len++;
 	}
-	return (0);
+	return (len);
 }

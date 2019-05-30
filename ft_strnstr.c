@@ -6,7 +6,7 @@
 /*   By: tmansing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 14:46:12 by tmansing          #+#    #+#             */
-/*   Updated: 2019/05/24 16:14:12 by tmansing         ###   ########.fr       */
+/*   Updated: 2019/05/30 12:32:49 by tmansing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (i < n && haystack[i] != '\0')
+	if (haystack[0] == '\0' && needle[0] =='\0')
+		return ((char *)haystack);
+	while (haystack[i] != '\0')
 	{
 		j = 0;
-		while (i + j < n && haystack[i + j] == needle[j] && needle[j] != '\0')
+		while (j + i < n && haystack[i + j] == needle[j] && needle[j] != '\0')
 			j++;
 		if (needle[j] == '\0')
 			return ((char *)haystack + i);

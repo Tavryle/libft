@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmansing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 10:57:16 by tmansing          #+#    #+#             */
-/*   Updated: 2019/05/30 12:23:44 by tmansing         ###   ########.fr       */
+/*   Created: 2019/05/30 14:02:37 by tmansing          #+#    #+#             */
+/*   Updated: 2019/05/30 15:40:12 by tmansing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int		ft_atoi(const char *str)
 {
-	size_t i;
-
+	int i;
+	int n;
+	
 	i = 0;
-	while (i < ft_strlen(s) + 1)
-	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
-	}
-	return (NULL);
+	while ((*str >= '\t' && *str<= '\r') || *str == 32)
+		str++;
+	if (*str == '-')
+		n = -1;
+	else
+		n = 1;
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str && ft_isdigit(*str))
+		i = (i * 10) + (*str++ - '0');
+	return (i * n);
 }

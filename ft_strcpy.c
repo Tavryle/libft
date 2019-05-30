@@ -6,9 +6,11 @@
 /*   By: tmansing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 14:51:20 by tmansing          #+#    #+#             */
-/*   Updated: 2019/05/22 11:35:25 by tmansing         ###   ########.fr       */
+/*   Updated: 2019/05/30 11:18:53 by tmansing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char		*ft_strcpy(char *dest, const char *src)
 {
@@ -20,5 +22,6 @@ char		*ft_strcpy(char *dest, const char *src)
 		dest[i] = src[i];
 		i++;
 	}
+	dest[i] = '\0';
 	return (dest);
 }
