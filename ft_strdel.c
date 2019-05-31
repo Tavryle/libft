@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmansing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 10:54:33 by tmansing          #+#    #+#             */
-/*   Updated: 2019/05/30 16:13:03 by tmansing         ###   ########.fr       */
+/*   Created: 2019/05/31 15:00:45 by tmansing          #+#    #+#             */
+/*   Updated: 2019/05/31 15:12:36 by tmansing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_putstr(char *str)
+void	ft_strdel(char **as)
 {
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
+	if (as && *as)
 	{
-		ft_putchar(str[i]);
-		i++;
+		free(*as);
+		*as = NULL;
 	}
 }
