@@ -6,7 +6,7 @@
 /*   By: tmansing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 13:13:38 by tmansing          #+#    #+#             */
-/*   Updated: 2019/05/30 16:00:47 by tmansing         ###   ########.fr       */
+/*   Updated: 2019/06/04 15:21:56 by tmansing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strdup(const char *s1)
 {
-	int i;
-	char *dest;
+	int		i;
+	char	*dest;
 
 	i = 0;
 	while (s1[i] != '\0')

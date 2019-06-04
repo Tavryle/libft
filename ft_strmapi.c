@@ -6,7 +6,7 @@
 /*   By: event <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 11:46:49 by event             #+#    #+#             */
-/*   Updated: 2019/06/04 11:53:54 by event            ###   ########.fr       */
+/*   Updated: 2019/06/04 15:19:23 by tmansing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int i;
-	int j;
-	char *str;
+	int		i;
+	int		j;
+	char	*str;
 
-	if(!s)
+	if (!s)
 		return (NULL);
 	j = ft_strlen((char *)s);
 	if (!(str = (char *)malloc(j + 1)))

@@ -6,7 +6,7 @@
 /*   By: event <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 09:40:31 by event             #+#    #+#             */
-/*   Updated: 2019/06/04 09:53:09 by event            ###   ########.fr       */
+/*   Updated: 2019/06/04 15:17:57 by tmansing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int i;
-	char *str;
-	char *a;
-	char *b;
+	int		i;
+	char	*str;
+	char	*a;
+	char	*b;
 
 	if (s1 && s2)
 	{
