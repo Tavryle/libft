@@ -6,7 +6,7 @@
 /*   By: event <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 09:40:31 by event             #+#    #+#             */
-/*   Updated: 2019/06/04 15:17:57 by tmansing         ###   ########.fr       */
+/*   Updated: 2019/06/05 14:05:12 by tmansing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (s1 && s2)
 	{
-		if (!(str = (char *)malloc((ft_strlen((char *)s1) + 
+		if (!(str = (char *)malloc((ft_strlen((char *)s1) +
 							(ft_strlen((char *)s2) + 1)))))
 			return (NULL);
 		a = (char *)s1;
-		b = (char *0)s2;
+		b = (char *)s2;
 		i = 0;
 		while (*a)
 			str[i++] = *(a++);
