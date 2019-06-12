@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmansing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 11:58:26 by tmansing          #+#    #+#             */
-/*   Updated: 2019/06/06 16:19:13 by tmansing         ###   ########.fr       */
+/*   Created: 2019/06/10 08:14:56 by tmansing          #+#    #+#             */
+/*   Updated: 2019/06/10 11:59:22 by tmansing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *dest, const char *src, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
-	size_t	j;
+	char	v[10];
+	long	nb;
+	int		i;
 
+	nb = n;
+	if (nb < 0)
+	{
+		ft_putchar_fd('-', fd);
+		nb = -nb;
+	}
+	if (nb == 0)
+		ft_putchar_fd('0', fd);
 	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
+	while (nb > 0)
 	{
+		v[i] = nb % 10 + '0';
+		nb = nb / 10;
 		i++;
 	}
-	while (src[j] != '\0' && j < n)
+	i--;
+	while (i >= 0)
 	{
-		dest[i] = src[j];
-		i++;
-		j++;
+		ft_putchar_fd(v[i], fd);
+		i--;
 	}
-	dest[i] = '\0';
-	return (dest);
 }

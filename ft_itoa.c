@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmansing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 11:58:26 by tmansing          #+#    #+#             */
-/*   Updated: 2019/06/06 16:19:13 by tmansing         ###   ########.fr       */
+/*   Created: 2019/06/10 08:21:51 by tmansing          #+#    #+#             */
+/*   Updated: 2019/06/10 08:23:31 by tmansing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *dest, const char *src, size_t n)
+char			*ft_itoa(int n)
 {
-	size_t	i;
-	size_t	j;
+	int		len;
+	int		sign;
+	long	nb;
+	char	*str;
 
-	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
+	nb = (n < 0) ? -(long)n : n;
+	sign = (n < 0) ? -1 : 0;
+	len = (sign == -1) ? 2 : 1;
+	while ((nb /= 10) >= 1)
+		len++;
+	str = (char *)malloc((len + 1) * sizeof(char));
+	if (str == NULL)
+		return (NULL);
+	str[len] = '\0';
+	nb = (n < 0) ? -(long)n : n;
+	while (len-- + sign)
 	{
-		i++;
+		str[len] = nb % 10 + 48;
+		nb /= 10;
 	}
-	while (src[j] != '\0' && j < n)
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	(len == 0) ? str[len] = '-' : 0;
+	return (str);
 }
