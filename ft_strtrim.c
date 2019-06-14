@@ -6,7 +6,7 @@
 /*   By: tmansing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 08:06:02 by tmansing          #+#    #+#             */
-/*   Updated: 2019/06/12 12:15:24 by tmansing         ###   ########.fr       */
+/*   Updated: 2019/06/14 15:09:38 by tmansing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_strtrim(char const *s)
 			dst[k++] = s[i];
 			i++;
 		}
-		dst[k] = '\0';
+		dst[k] = '\0';         
 		return (dst);
 	}
 	return (NULL);

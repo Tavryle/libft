@@ -6,7 +6,7 @@
 /*   By: tmansing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 13:29:35 by tmansing          #+#    #+#             */
-/*   Updated: 2019/06/11 14:25:46 by tmansing         ###   ########.fr       */
+/*   Updated: 2019/06/14 09:59:18 by tmansing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putstr_fd(char const *s, int fd)
 	i = 0;
 	if (s == '\0')
 	{
-		write (1, "NULL", 6);
+		write(1, "NULL", 6);
 	}
 	else
 	{
