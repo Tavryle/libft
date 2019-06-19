@@ -6,13 +6,13 @@
 /*   By: tmansing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 08:21:51 by tmansing          #+#    #+#             */
-/*   Updated: 2019/06/10 08:23:31 by tmansing         ###   ########.fr       */
+/*   Updated: 2019/06/19 15:12:03 by tmansing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int		len;
 	int		sign;

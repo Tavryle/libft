@@ -6,39 +6,34 @@
 /*   By: tmansing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 08:06:02 by tmansing          #+#    #+#             */
-/*   Updated: 2019/06/14 15:09:38 by tmansing         ###   ########.fr       */
+/*   Updated: 2019/06/19 15:57:40 by tmansing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_strtrim(char const *s)
 {
-	int		i;
-	int		j;
-	int		k;
-	char	*dst;
+	int		start;
+	int		end;
+	int		len;
+	char	*new;
 
-	if (s)
-	{
-		i = 0;
-		j = ft_strlen((char *)(s)) - 1;
-		while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
-			i++;
-		if (s[i] == '\0')
-			return (ft_strnew(0));
-		while (s[j] == ' ' || s[j] == '\n' || s[j] == '\t')
-			j--;
-		if (!(dst = (char*)malloc(sizeof(*dst) * (j - i + 2))))
-			return (NULL);
-		k = 0;
-		while (i <= j)
-		{
-			dst[k++] = s[i];
-			i++;
-		}
-		dst[k] = '\0';         
-		return (dst);
-	}
-	return (NULL);
+	start = 0;
+	if (s == NULL)
+		return (NULL);
+	len = ft_strlen(s);
+	if (len == 0)
+		return (ft_strnew(1));
+	end = len - 1;
+	while (ft_isspace(s[start]) == 1 && s[start] != '\0')
+		start++;
+	while (ft_isspace(s[end]) == 1 && end >= start)
+		end--;
+	len = end - start + 1;
+	if (!(new = ft_strnew(len)))
+		return (NULL);
+	ft_strncpy(new, &s[start], len);
+	return (new);
 }

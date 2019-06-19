@@ -6,7 +6,7 @@
 /*   By: tmansing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 10:11:49 by tmansing          #+#    #+#             */
-/*   Updated: 2019/06/11 08:57:58 by tmansing         ###   ########.fr       */
+/*   Updated: 2019/06/19 15:12:21 by tmansing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <string.h>
 # include <ctype.h>
 
-int		atoi(const char *str);
+int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -71,5 +71,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n);
 char	*ft_strncpy(char *dst, const char *src, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+int		ft_isspace(int c);
 
 #endif
