@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmansing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/04 14:53:22 by tmansing          #+#    #+#             */
-/*   Updated: 2019/06/07 13:59:42 by tmansing         ###   ########.fr       */
+/*   Created: 2019/07/06 01:57:09 by tmansing          #+#    #+#             */
+/*   Updated: 2019/07/06 01:57:16 by tmansing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,19 @@
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
+	char	*fresh;
 	size_t	i;
-	char	*str;
 
-	if (s)
+	if (!s)
+		return (NULL);
+	if (!(fresh = (char*)malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	i = 0;
+	while (i < len)
 	{
-		i = 0;
-		if (!(str = (char *)malloc(len + 1)))
-			return (NULL);
-		while (s[i] != '\0' && i < len)
-		{
-			str[i] = s[start];
-			i++;
-			start++;
-		}
-		str[i] = '\0';
-		return (str);
+		fresh[i] = s[start + i];
+		i++;
 	}
-	return (0);
+	fresh[i] = '\0';
+	return (fresh);
 }

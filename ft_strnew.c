@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmansing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/31 12:19:56 by tmansing          #+#    #+#             */
-/*   Updated: 2019/06/19 15:39:11 by tmansing         ###   ########.fr       */
+/*   Created: 2019/07/06 01:58:04 by tmansing          #+#    #+#             */
+/*   Updated: 2019/07/06 01:58:09 by tmansing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 char	*ft_strnew(size_t size)
 {
-	char *new;
+	char *fresh;
 
-	if (!(new = malloc(size + 1)))
+	if (!(fresh = (char*)ft_memalloc(sizeof(char) * (size + 1))))
 		return (NULL);
-	ft_memset(new, 0, size + 1);
-	new[size + 1] = '\0';
-	return (new);
+	return (fresh);
 }
